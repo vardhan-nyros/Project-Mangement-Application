@@ -1,0 +1,37 @@
+<%#= link_to 'Logout', :controller => :home,:action=> :logout %></b>
+<h1>Developers Available</h1>
+
+<table cellspacing=2 cellpadding=3 style="border-collapse:collapse;">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Platform</th>
+    <th>Date of joining</th>
+    <th>Image </th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @developers.each do |developer| %>
+ <%#row_color = cycle("C0c0c0","FFFFFF")  style="background:#<%#= row_color"%>
+ <tr >	
+    <td><%= developer.name %></td>
+    <td><%= developer.email %></td>
+    <td><%= developer.platform %></td>
+    <td><%= developer.date_of_joining %></td>
+    <td><%= image_tag(developer.image_path,:size => '50x54')%>&nbsp;</td>
+    <td><%= link_to 'Show', developer %> &nbsp;</td> 
+   <td><%= link_to image_tag('edit.jpeg', :border =>0,:size => '20x20'), edit_developer_path(developer) %>&nbsp; </td><%#= link_to 'edit', edit_developer_path %>
+    <td><%= link_to image_tag('delete.jpeg', :border =>0,:size => '20x20'), developer, :confirm => 'Are you sure?', :method => :delete %></td>
+    
+  </tr>
+<% end %>
+</table>
+<br />
+<div style="float:right;"><%= will_paginate @developers %></div>
+<br/>
+
+<br/><%= link_to 'Add Developer', new_developer_path %>  |  
+ 
+<%#= link_to 'Projects',  :controller => :projects,:action=> :index  %>

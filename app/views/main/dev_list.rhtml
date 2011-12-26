@@ -1,0 +1,30 @@
+<h1>Developers Available</h1>
+
+<table cellspacing=7 cellpadding=3 >
+  <tr>
+    <th>Name</th>
+    <th>Platform</th>
+    <th>Date of joining</th>
+    <th>Image path</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @developers.each do |developer| %>
+  <tr>
+    <td><%= developer.name %></td>
+    <td><%= developer.platform %></td>
+    <td><%= developer.date_of_joining %></td>
+    <td><%= image_tag(developer.image_path,:size => '50x54')%></td>  
+  </tr>
+<% end %>
+</table>
+<br />
+<%= will_paginate @developers %><br/>
+<br/>
+
+
+ 
+<%= link_to 'Home',root_url  %>   |  
+<%= link_to 'Projects',:controller => 'Main',:action => 'pro_list'  %> 

@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+<p>
+  <b>Technology(s):</b>
+  <%= @project.technology %>
+</p>
+<p>
+  <b>URL:</b>
+<td><%= @project.url %></td>
+</p>
+<%= link_to 'Back', :controller => 'Main',:action => 'pro_list'  %>

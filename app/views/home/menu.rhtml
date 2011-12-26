@@ -1,0 +1,10 @@
+<div class="menu">
+  <h2>Admin Menu For Management of Projects</h2>
+  <div class="identity"><h4>Welcome ...... <%= session[:username] %>......</h4></div>
+  <ul>
+   
+    <li><%= link_to("Manage  Projects", :controller => 'projects') %></li>
+    <li><%= link_to("Manage  Developers", :controller => 'developers') %></li>
+    <%#= link_to("Logout", :controller => 'home',:action => 'logout') %>
+  </ul> 
+</div>

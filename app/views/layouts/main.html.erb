@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Project Management Admin</title>
+  <%= stylesheet_link_tag  'simple_form','mainn','event_calendar.css' %>
+  <%= javascript_include_tag :defaults %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div id="container">
+	
+		<div id="topbar">
+		
+			<ul>
+				<li><%= link_to 'Admin', :controller => :home,:action=> :menu %></li>
+				<li><%= link_to 'Home',:controller => 'Main',:action => 'about'%></li>
+				 <li><%= link_to 'Contact',:controller => 'Main',:action => 'contact'%></li>
+		    </ul>
+		 </div>
+		 <div id="header"> 
+    <h1>NYROS :: "We have a Solution"</h1>
+    <div id="navbar"> 
+      <ul>
+        
+        <li><%= link_to 'Projects',:controller => 'Main',:action => 'pro_list'  %></li>
+	    <li><%= link_to 'Developers',:controller => 'Main',:action => 'dev_list'  %></li>
+	    <li><%= link_to 'Events',:controller => 'Main',:action => 'event_list'  %></li>
+	   
+      </ul>
+    </div>
+  </div>
+<div id=core>
+<div id=coreleft>
+<ul>
+				<li><%= link_to "InKakinada", "http://www.inkakinada.com/" %>
+				<li><%= link_to "ROR Experts", "http://www.rorexperts.com/" %>
+				<li><%= link_to "Nyrosblog", "http://www.nyros.com/" %>
+				
+			</ul>
+</div>
+<div id=corecenter>
+<%= yield %>
+
+</div>
+<div id="footer">
+			
+				<p>Design by <a href="#">SaiStudio.nl Webdesign</a> | &copy; 2003 - 2006 sai.com | 
+			    <a href="http://validator.w3.org/check/referer">xHTML</a><br />
+
+<!--This theme is free for distriubtion,  so long as  link to openwebdesing.org and florida-villa.com  stay on the theme-->
+Courtesy  <a href="http://www.nyros.com" target="_blank">Open Web Design</a><a href="http://www.dubaiapartments.biz" target="_blank"></a>Thanks to <a href="http://www.florida-villa.com" target="_blank">Florida Vacation Homes</a>
+</p>
+			
+			</div>
+		
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<h1>Listing projects</h1>
+
+<table cellspacing=5 cellpadding=3 >
+  <tr>
+    <th>Title</th>
+    <th>Screenshot</th>
+    <th>Platform</th>
+    <th>Developer(s)</th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @projects.each do |project| %>
+  <tr>
+    <td><%=link_to(project.Title,:controller =>'Main',:action => 'pro_show',:id=>project) %></td>
+    <td><%=image_tag(project.image.url,:size => '50x54') %></td>
+    <td><%= project.platform %></td>
+    <td> <% for developer in project.developers %>
+         <%= developer.name%><br/>
+        <% end %> </td>
+      </tr>
+<% end %>
+</table>
+
+<br />
+<%= will_paginate @projects %><br/>
+
+<br />
+ <%= link_to 'Home',root_url  %> | <%= link_to 'Developers',:controller => 'Main',:action => 'dev_list'  %> 
+
+
+ 
+

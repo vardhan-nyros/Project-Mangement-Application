@@ -1,0 +1,77 @@
+<%#= form_for(@project) do |f| %>
+ <%= simple_form_for(@project,:html => { :multipart => true }) do |f| %>
+
+  <% if @project.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@project.errors.count, "error") %> prohibited this project from being saved:</h2>
+
+      <ul>
+      <% @project.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <!--<div class="field">
+    <%= f.label :Title %><br />
+    <%= f.text_field :Title %>
+  </div>
+  <div class="field">
+    <%= f.label :description %><br />
+    <%= f.text_area :description %>
+  </div>
+  <div class="field">
+    <%= f.label :start_date %><br />
+    <%= f.date_select :start_date %>
+  </div>
+  <div class="field">
+    <%= f.label :end_date %><br />
+    <%= f.date_select :end_date %>
+  </div>
+  <div class="field">
+    <%= f.label :Client_name %><br />
+    <%= f.text_field :Client_name %>
+  </div>
+  <div class="field">
+    <%= f.label :platform %><br />
+    <%= f.text_field :platform %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>-->
+  <div class="field">
+         <%= f.input :Title %>
+  </div>
+  <div class="field">
+        <%= f.input :description %>
+  </div>
+  <div class="field">
+            <%= f.input :start_date %>
+  </div>
+  <div class="field">
+        <%= f.input :end_date %>
+  </div>
+  <div class="field">
+        <%= f.input :Client_name %>
+  </div>
+  <div class="field">
+         <%= f.input :platform %>
+  </div>
+   <div class="field">
+    <%= f.association :developers, :as => :check_boxes, :input_html => { :checked => true }  %>
+   </div>
+<div class="field">
+<%= f.label :Imagepath %>
+<%= f.file_field :image %>
+</div>
+  <div class="field">
+         <%= f.input :technology %>
+  </div>
+ <div class="field">
+        <%= f.input :url %>
+  </div>
+
+  <%= f.button :submit %>
+
+<% end %>

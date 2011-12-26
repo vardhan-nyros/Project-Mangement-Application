@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Title:</b>
+  <%= @project.Title %>
+</p>
+
+<p>
+  <b>Description:</b>
+  <%= @project.description %>
+</p>
+
+<p>
+  <b>Start date:</b>
+  <%= @project.start_date %>
+</p>
+
+<p>
+  <b>End date:</b>
+  <%= @project.end_date %>
+</p>
+
+<p>
+  <b>Client name:</b>
+  <%= @project.Client_name %>
+</p>
+
+<p>
+  <b>Platform:</b>
+  <%= @project.platform %>
+</p>
+<p>
+<b>Image:</b>
+<%= image_tag @project.image.url(:medium) %>
+</p> 
+
+<%= link_to 'Edit', edit_project_path(@project) %> |
+
+<%= link_to 'Back', projects_path %>
